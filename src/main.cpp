@@ -1,6 +1,13 @@
 #include <stm32f1xx.h>
 
+#include <PCD8544.h>
+
+void nop(uint8_t){};
+
+PCD8544 lcd1 = PCD8544(nop, nop);
+
 int main() {
+    lcd1.initialize();
 // TIM1 PWM
     RCC -> APB2ENR |= RCC_APB2ENR_TIM1EN; //тактирование TIM1
 

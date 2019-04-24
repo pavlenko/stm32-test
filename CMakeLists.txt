@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.2)
 project(stm32)
 
 include(CMakeListsPrivate.txt)
-include_directories(lib/*/src)
+include_directories(lib/PCD8544/src)
 
 add_custom_target(
     PLATFORMIO_BUILD ALL
