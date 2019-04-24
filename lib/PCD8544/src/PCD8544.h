@@ -24,6 +24,13 @@ private:
     void (* _setData) (uint8_t);
 
     /**
+     * Set extended instruction enabled flag
+     *
+     * @param enabled
+     */
+    void _setExtendedInstruction(bool enabled);
+
+    /**
      * Set temperature coefficient value
      *
      * @param tc

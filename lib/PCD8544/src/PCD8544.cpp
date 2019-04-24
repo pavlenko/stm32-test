@@ -3,6 +3,11 @@
 PCD8544::PCD8544(void (* setMode) (uint8_t), void (* setData) (uint8_t)): _setMode(setMode), _setData(setData)
 {}
 
+void PCD8544::_setExtendedInstruction(bool enabled)
+{
+    this->_setData(0x20 | enabled);
+}
+
 void PCD8544::_setTemperatureCoefficient(uint8_t tc)
 {
     if (tc > 3) {
@@ -30,12 +35,12 @@ void PCD8544::initialize()
 {
     this->_setMode(PCD8544_DC_COMMAND);  // <-- Set command transfer mode
 
-    this->_setData(PCD8544_FUNCTION_SET(0, 0, 1));  // <-- Tell LCD extended commands follow
+    this->_setExtendedInstruction(true);
     this->_setData(PCD8544_VOP(0x30));              // <-- Set LCD Vop (Contrast)
     this->_setTemperatureCoefficient(0x03);
     this->_setBias(0x04);
 
-    this->_setData(PCD8544_FUNCTION_SET(0, 0, 0));  // <-- Tell LCD normal commands follow
+    this->_setExtendedInstruction(false);  // <-- Tell LCD normal commands follow
     this->_setDisplayMode(PCD8544_DISPLAY_MODE_NORMAL);
 }
 
