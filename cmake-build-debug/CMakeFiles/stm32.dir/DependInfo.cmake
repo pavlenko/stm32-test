@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "D:/PROJECTS/pavlenko/stm32/lib/PCD8544/src/PCD8544.cpp" "D:/PROJECTS/pavlenko/stm32/cmake-build-debug/CMakeFiles/stm32.dir/lib/PCD8544/src/PCD8544.cpp.obj"
   "D:/PROJECTS/pavlenko/stm32/src/main.cpp" "D:/PROJECTS/pavlenko/stm32/cmake-build-debug/CMakeFiles/stm32.dir/src/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
@@ -21,6 +22,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "C:/Users/MASTER/.platformio/packages/tool-unity"
   "../include"
   "../src"
+  "../lib/*/src"
   )
 
 # Targets to which this target links.

@@ -226,6 +226,33 @@ stm32/fast:
 	$(MAKE) -f CMakeFiles\stm32.dir\build.make CMakeFiles/stm32.dir/build
 .PHONY : stm32/fast
 
+lib/PCD8544/src/PCD8544.obj: lib/PCD8544/src/PCD8544.cpp.obj
+
+.PHONY : lib/PCD8544/src/PCD8544.obj
+
+# target to build an object file
+lib/PCD8544/src/PCD8544.cpp.obj:
+	$(MAKE) -f CMakeFiles\stm32.dir\build.make CMakeFiles/stm32.dir/lib/PCD8544/src/PCD8544.cpp.obj
+.PHONY : lib/PCD8544/src/PCD8544.cpp.obj
+
+lib/PCD8544/src/PCD8544.i: lib/PCD8544/src/PCD8544.cpp.i
+
+.PHONY : lib/PCD8544/src/PCD8544.i
+
+# target to preprocess a source file
+lib/PCD8544/src/PCD8544.cpp.i:
+	$(MAKE) -f CMakeFiles\stm32.dir\build.make CMakeFiles/stm32.dir/lib/PCD8544/src/PCD8544.cpp.i
+.PHONY : lib/PCD8544/src/PCD8544.cpp.i
+
+lib/PCD8544/src/PCD8544.s: lib/PCD8544/src/PCD8544.cpp.s
+
+.PHONY : lib/PCD8544/src/PCD8544.s
+
+# target to generate assembly for a file
+lib/PCD8544/src/PCD8544.cpp.s:
+	$(MAKE) -f CMakeFiles\stm32.dir\build.make CMakeFiles/stm32.dir/lib/PCD8544/src/PCD8544.cpp.s
+.PHONY : lib/PCD8544/src/PCD8544.cpp.s
+
 src/main.obj: src/main.cpp.obj
 
 .PHONY : src/main.obj
@@ -270,6 +297,9 @@ help:
 	@echo ... stm32
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... lib/PCD8544/src/PCD8544.obj
+	@echo ... lib/PCD8544/src/PCD8544.i
+	@echo ... lib/PCD8544/src/PCD8544.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/stm32.dir/lib/PCD8544/src/PCD8544.cpp.obj"
   "CMakeFiles/stm32.dir/src/main.cpp.obj"
   "stm32.pdb"
   "stm32.exe"
