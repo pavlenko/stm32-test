@@ -16,15 +16,26 @@ typedef enum PCD8544_DisplayMode_t {
 } PCD8544_DisplayMode_t;
 
 #define PCD8544_FUNCTION_SET(_PD_, _V_, _H_) (0x20 | (0x07 & ((_PD_ << 2) | (_V_ << 1) | _H_)))
-#define PCD8544_DISPLAY_CONTROL(_D_, _E_)    (0x08 | (0x05 & ((_D_ << 2) | _E_)))
 #define PCD8544_VOP(_vop_)                   (0x80 | (0x7F & _vop_))
-#define PCD8544_TEMP_COEFFICIENT(_tc_)       (0x04 | (0x03 & _tc_))
-#define PCD8544_BIAS(_bias_)                 (0x10 | (0x07 & _bias_))
 
 class PCD8544 {
 private:
     void (* _setMode) (uint8_t);
     void (* _setData) (uint8_t);
+
+    /**
+     * Set temperature coefficient value
+     *
+     * @param tc
+     */
+    void _setTemperatureCoefficient(uint8_t tc);
+
+    /**
+     * Set bias value
+     *
+     * @param bias
+     */
+    void _setBias(uint8_t bias);
 
     /**
      * Set display mode
@@ -45,6 +56,20 @@ public:
      * @TODO maybe pass specific parameters
      */
     void initialize();
+
+    /**
+     * Set temperature coefficient
+     *
+     * @param tc
+     */
+    void setTemperatureCoefficient(uint8_t tc);
+
+    /**
+     * Set bias
+     *
+     * @param bias
+     */
+    void setBias(uint8_t bias);
 
     /**
      * Set display mode
