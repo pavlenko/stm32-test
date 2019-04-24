@@ -20,10 +20,17 @@ private:
     void (* setData) (uint8_t);
 public:
     /**
+     * Instantiate driver with specific interface adapter functions
+     *
      * @param setMode
      * @param setData
      */
     PCD8544(void (* setMode) (uint8_t), void (* setData) (uint8_t));
+
+    /**
+     * @TODO maybe pass specific parameters
+     */
+    void initialize();
 
     /**
      * Select display column (0...83)

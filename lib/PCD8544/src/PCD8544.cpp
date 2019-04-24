@@ -1,6 +1,9 @@
 #include "PCD8544.h"
 
 PCD8544::PCD8544(void (* setMode) (uint8_t), void (* setData) (uint8_t)): setMode(setMode), setData(setData)
+{}
+
+void PCD8544::initialize()
 {
     this->setMode(PCD8544_DC_COMMAND);  // <-- Set command transfer mode
 
