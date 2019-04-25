@@ -15,40 +15,20 @@ typedef enum PCD8544_DisplayMode_t {
     PCD8544_DISPLAY_MODE_INVERTED  = 5,
 } PCD8544_DisplayMode_t;
 
-#define PCD8544_FUNCTION_SET(_PD_, _V_, _H_) (0x20 | (0x07 & ((_PD_ << 2) | (_V_ << 1) | _H_)))
-#define PCD8544_VOP(_vop_)                   (0x80 | (0x7F & _vop_))
-
 class PCD8544 {
 private:
+    bool _powerDown            = false;
+    bool _extendedInstruction  = false;
+
     void (* _setMode) (uint8_t);
     void (* _setData) (uint8_t);
 
-    /**
-     * Set extended instruction enabled flag
-     *
-     * @param enabled
-     */
+    void _setFunctionSet();
+    void _setPowerDown(bool enabled);
     void _setExtendedInstruction(bool enabled);
-
-    /**
-     * Set temperature coefficient value
-     *
-     * @param tc
-     */
+    void _setOperationVoltage(uint8_t vop);
     void _setTemperatureCoefficient(uint8_t tc);
-
-    /**
-     * Set bias value
-     *
-     * @param bias
-     */
     void _setBias(uint8_t bias);
-
-    /**
-     * Set display mode
-     *
-     * @param mode
-     */
     void _setDisplayMode(PCD8544_DisplayMode_t mode);
 public:
     /**
@@ -59,10 +39,21 @@ public:
      */
     PCD8544(void (* setMode) (uint8_t), void (* setData) (uint8_t));
 
-    /**
-     * @TODO maybe pass specific parameters
-     */
     void initialize();
+
+    /**
+     * Enable/disable power down mode
+     *
+     * @param enabled
+     */
+    void setPowerDown(bool enabled);
+
+    /**
+     * Set operation voltage (contrast)
+     *
+     * @param vop
+     */
+    void setOperationVoltage(uint8_t vop);
 
     /**
      * Set temperature coefficient
