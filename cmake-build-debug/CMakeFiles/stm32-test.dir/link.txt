@@ -1,0 +1,1 @@
+/home/user1/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++  -g  -rdynamic CMakeFiles/stm32-test.dir/lib/PCD8544/src/PCD8544.cpp.o CMakeFiles/stm32-test.dir/src/main.cpp.o  -o stm32-test 

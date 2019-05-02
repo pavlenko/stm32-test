@@ -1,4 +1,4 @@
-"C:\Program Files\JetBrains\CLion 2018.2.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\PROJECTS\pavlenko\stm32
+/opt/clion/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/user1/PROJECTS/stm32-test
 -- Configuring done
 -- Generating done
--- Build files have been written to: D:/PROJECTS/pavlenko/stm32/cmake-build-debug
+-- Build files have been written to: /home/user1/PROJECTS/stm32-test/cmake-build-debug
